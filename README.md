@@ -1,4 +1,4 @@
-# feedtheneed (Repository)
+# feedtheneedy (Repository)
 Docker is required to run this application, along with that docker-compose, make sure to install necessary software for docker as per your OS.
 
 #### Docker Installation
@@ -23,7 +23,7 @@ Docker is required to run this application, along with that docker-compose, make
 - `docker-compose run app sh`
 
 #### How to use byebug?
-- `docker attach feedtheneed_app_1` (you should be running `up` in another terminal tab)
+- `docker attach feedtheneedy_app_1` (you should be running `up` in another terminal tab)
 
 #### Edit Credentials
 - `docker-compose exec app sh`
