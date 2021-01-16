@@ -1,0 +1,12 @@
+{:uriI"}file://app/assets/images/aboutus.html?type=text/html&id=a905829ef8be2ee30c160c8d54d9890a43f02c4028c173232ae14f9cbe665062:ET:load_pathI"app/assets/images;T:filenameI"#app/assets/images/aboutus.html;T:	nameI"aboutus;T:logical_pathI"aboutus.html;T:content_typeI"text/html;T:sourceI"n<html>
+<body bgcolor="GGCCCC">
+<h1>About Us</h1>
+<h3>We are the member of an Indian NGOâ€™s to curb food wastage: Taking from the wedding or any function and giving to the needy people. We are located in Bangalore</h3>
+<img src="foodwaste.jpg" height="350px" width="600px">                         <img src="hunger.jpg" height="350px" width="600px">
+</body>
+</html>
+;T:metadata{
+:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"2processors:type=text/html&file_type=text/html;TTI"1file-digest://app/assets/images/aboutus.html;TTF:charsetI"
+utf-8;F:digest"%ÿ®Ë#&îl0ÿ»5À¶ß\çì²ºÏ¿ÕšÊ­Ê:lengthin:environment_versionI"1.0;T:dependencies_digest"%èüÈû#‘),õyú›‘Aµàª‡*şÓƒ/8•:idI"Ea905829ef8be2ee30c160c8d54d9890a43f02c4028c173232ae14f9cbe665062;F

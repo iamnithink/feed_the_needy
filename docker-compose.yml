@@ -1,0 +1,42 @@
+version: '3.4'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        RAILS_ENV: development
+    stdin_open: true
+    tty: true
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    depends_on:
+      - database
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - bundle_cache:/bundle
+      - node_modules:/app/node_modules
+    environment:
+      RAILS_ENV: development
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: feed_the_needy_development
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/web/Dockerfile
+    links:
+      - app
+    ports:
+      - 80:80
+
+  database:
+    image: postgres:12.1
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  bundle_cache:
+  db_data:
+  node_modules:

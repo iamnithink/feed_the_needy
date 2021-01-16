@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class="container mt-4">
+  <div class="">
+    <div class="d-flex">
+      <div>
+        <h1>Foods</h1>
+      </div>
+      <div class="ml-auto">
+        <%= link_to 'New Food', new_food_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Address</th>
+          <th scope="col">Description</th>
+          <th scope="col">User</th>
+          <th scope="col" colspan="3"> ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.email %></td>
+          <td><%= food.phone %></td>
+          <td><%= food.address %></td>
+          <td><%= food.description %></td>
+          <td><%= food.user_id %></td>
+          <td><%= link_to 'Show', food %></td>
+          <td><%= link_to 'Edit', edit_food_path(food) %></td>
+          <td><%= link_to 'Destroy', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>

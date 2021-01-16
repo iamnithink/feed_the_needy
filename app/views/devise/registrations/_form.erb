@@ -1,0 +1,50 @@
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <h3 class="mr-auto">Register for Doner</h3>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <%= f.text_field :first_name, autofocus: true, autocomplete: "name", class:"form-control", placeholder:"Enter Firts Name" %>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <%= f.text_field :last_name, autofocus: true, autocomplete: "name", class:"form-control", placeholder:"Enter Last Name" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <%= f.text_field :phone, autofocus: true, autocomplete: "phone", class:"form-control", placeholder:"Phone number" %>
+            </div>
+          </div>
+
+          <div class="col-sm-12">
+            <div class="form-group">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Password" %>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Confirm Password" %>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <button class="btn btn-primary submit-btn">REGISTER</button>
+        </div>
+        <%= link_to  "Already have account", new_user_session_path, method: :get, class:"mt-5 mb-3" %>
+
+        <% end %>

@@ -1,0 +1,46 @@
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7">
+        <div class="d-flex h-100 pr-md-5">
+          <div class="align-self-center section-info">
+            <h1>Dashboard</h1>
+            <p><%= current_user.first_name %></p>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="hero-bg h-100"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="highlight-card">
+  <div class="container">
+    <div class="row">
+      <div class="card-columns">
+        <% if current_user.super_admin? %>
+        <div class="card border-dark mb-3" style="max-width: 36rem;">
+          <div class="card-header">Total Doner User</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"><%= Doner.all.count %></h5>
+          </div>
+        </div>
+        <% end %>
+        <div class="card border-dark mb-3" style="max-width: 36rem;">
+          <div class="card-header">Total food list</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"><%= @foods.count %></h5>
+          </div>
+        </div>
+        <div class="card border-dark mb-3" style="max-width: 36rem;">
+          <div class="card-header">Todays request</div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"><%= @foods.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day).count %></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

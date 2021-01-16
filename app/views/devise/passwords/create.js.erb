@@ -1,0 +1,8 @@
+$(".f-error").removeClass("f-error");
+$(".f-errordec").remove();
+<%if @error == 0%>
+	window.location.href = "<%= root_path %>"
+<%else%>
+	$("#forgot_user_email").addClass("f-error");
+	$("#forgot_user_email").after("<span class='f-errordec'>This email address is not registered with us</span>")
+<%end%>
