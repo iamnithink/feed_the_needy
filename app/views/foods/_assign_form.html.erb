@@ -1,0 +1,30 @@
+
+<%= form_with(model: food, local: true, url: '/assign') do |f| %>
+<% if food.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(food.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+  <ul>
+    <% food.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="form-group">
+      <label for="">Select User to Donate</label>
+      <%= f.select(:assigned_user, Food.where(user_type: 'Request').pluck(:name), {}, { class: 'form-control' }) %>
+    </div>
+  </div>
+</div>
+<%= f.hidden_field :id, value: food.id %>
+
+
+<div class="form-group">
+  <button class="btn btn-primary submit-btn">Submit</button>
+</div>
+
+<% end %>

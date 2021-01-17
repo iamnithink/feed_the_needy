@@ -20,7 +20,12 @@ ActiveRecord::Schema.define(version: 2021_01_16_201618) do
     t.string "email"
     t.string "phone"
     t.string "address"
+    t.string "food_type"
     t.text "description"
+    t.string "user_type"
+    t.string "number_of_plate"
+    t.string "assigned_user"
+    t.boolean "status", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

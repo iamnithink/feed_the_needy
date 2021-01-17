@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   devise_for :super_admins, skip: :sessions
   resources :dashboards
   resources :foods
+  get '/assign', to: 'foods#assign'
+  patch '/assign', to: 'foods#assign_food'
 
 end

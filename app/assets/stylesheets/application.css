@@ -21,13 +21,19 @@
    padding: 20px;
    height: 100vh;
  }
+ nav {
+  box-shadow: 0 0 7px rgba(0,0,0,.1)!important;
+  -moz-box-shadow: 0 0 7px rgba(0,0,0,.1)!important;
+  -webkit-box-shadow: 0 0 7px rgba(0,0,0,.1)!important;
+  margin-bottom: 30px;
+ }
  .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link:hover {
   background-color: aliceblue;
  }
  .nav-item {
    margin: auto 4px;
  }
-.navbar-brand .logo {
+.logo {
   color: #568914;
   font-weight: 300;
   font-size: 50px;
@@ -36,7 +42,7 @@
   letter-spacing: 5px;
 }
 body {
-  background: url('main-bg.png');
+  background: url('hunger.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;

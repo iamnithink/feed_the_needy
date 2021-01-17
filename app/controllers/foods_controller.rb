@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!  
-  before_action :set_food, only: [:show, :edit, :update, :destroy]
+  before_action :set_food, only: [:show, :edit, :assign, :update, :destroy]
 
   # GET /foods
   # GET /foods.json
@@ -66,6 +66,32 @@ class FoodsController < ApplicationController
     end
   end
 
+
+  def assign
+    @food = Food.find(params[:id].to_i)
+  end
+
+  def assign_food
+    if food_params[:assigned_user].present?
+      @food = Food.find(food_params[:id].to_i)
+      if @food.present?
+        @food.status = true
+        @food.assigned_user = food_params[:assigned_user]
+        @food.save
+        @food_req_user = Food.where(name: food_params[:assigned_user]).first
+        @food_req_user.status = true
+        @food_req_user.assigned_user = @food.name
+        @food_req_user.save
+      end
+      respond_to do |format|
+        format.html { redirect_to foods_url, notice: 'Food assigned successfully' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_back(fallback_location: root_path, notice: 'Please select User')
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_food
@@ -74,6 +100,6 @@ class FoodsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def food_params
-      params.require(:food).permit(:name, :email, :phone, :address, :description, :user_id)
+      params.require(:food).permit(:id, :assigned_user, :name, :food_type, :user_type, :number_of_plate, :status, :email, :phone, :address, :description, :user_id)
     end
 end

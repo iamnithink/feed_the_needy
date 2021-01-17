@@ -46,7 +46,23 @@
 
       <p>
         <strong>User:</strong>
-        <%= @food.user_id %>
+        <%= @food.user.first_name %>
+      </p>
+      <p>
+        <strong>Food Type:</strong>
+        <%= @food.food_type %>
+      </p>
+      <p>
+        <strong>User Type:</strong>
+        <%= @food.user_type %>
+      </p>
+      <p>
+        <strong>Number of plates:</strong>
+        <%= @food.number_of_plate %>
+      </p>
+      <p>
+        <strong>Status:</strong>
+        <%= @food.status ? 'assigned' : 'pending' %>
       </p>
 
       <%= link_to 'Edit', edit_food_path(@food) %> |
